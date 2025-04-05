@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans min-h-screen p-6">
+
+<div class="mx-auto bg-white shadow-lg rounded-xl p-8">
+    <h1 class="text-2xl font-bold mb-4 text-center">🍽️ Top 10 Restaurants</h1>
+
+    <form method="get" action="/view" class="flex items-center gap-2 mb-6">
+        <input type="text" name="postcode" placeholder="Enter UK postcode"
+               class="flex-1 border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+               required />
+        <button type="submit"
+                class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
+            Search
+        </button>
+    </form>
+
+    <div th:if="${restaurants}">
+        <h2 class="text-lg font-semibold mb-4">Results for "<span th:text="${postcode}"></span>"</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div th:each="restaurant : ${restaurants}" class="bg-white p-4 rounded-lg shadow hover:shadow-md transition">
+                <h3 class="text-xl font-semibold text-indigo-700" th:text="${restaurant.name}"></h3>
+
+                <div class="mt-2 text-sm text-gray-600">
+                    <p><strong>Rating:</strong> <span th:text="${restaurant.rating}"></span></p>
+                    <p><strong>Address:</strong> <span th:text="${restaurant.address}"></span></p>
+
+                    <p class="mt-2 font-medium">Cuisines:</p>
+                    <div class="flex flex-wrap gap-2 mt-1">
+                    <span th:each="cuisine : ${restaurant.cuisines}"
+                          th:text="${cuisine}"
+                          class="bg-indigo-100 text-indigo-800 text-xs font-medium px-3 py-1 rounded-full">
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
