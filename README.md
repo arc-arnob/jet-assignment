@@ -64,6 +64,7 @@ Then open: [http://localhost:8080](http://localhost:8080)
 ### Option 2: Run with Docker (recommended)
 
 ```bash
+docker pull arc007arnob/restaurant-finder
 docker run -p 8080:8080 arc007arnob/restaurant-finder
 ```
 
