@@ -89,6 +89,17 @@ Includes:
 Swagger UI (if enabled): [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
 ---
+## CI/CD
+
+This project includes a GitHub Actions workflow that:
+
+- Builds the project with Gradle
+- Runs unit tests
+- Builds and pushes a Docker image to Docker Hub (`arc007arnob/restaurant-finder`)
+
+See `.github/workflows/ci.yml` for the pipeline config.
+
+---
 
 ## Possible Improvements
 
