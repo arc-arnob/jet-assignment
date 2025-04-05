@@ -109,7 +109,6 @@ See `.github/workflows/ci.yml` for the pipeline config.
 ## Possible Improvements
 
 - Add client-side interactivity (Vue)
-- Pagination or sort by rating/distance
 - Add caching layer (e.g., Redis)
 - Add Database Support
 
