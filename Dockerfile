@@ -1,5 +1,5 @@
 # Start from a Java 17 JDK base image
-FROM eclipse-temurin:17-jdk-alpine
+FROM eclipse-temurin:17-jdk-jammy
 
 # Set the working directory inside the container
 WORKDIR /app
