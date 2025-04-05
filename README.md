@@ -106,8 +106,21 @@ See `.github/workflows/ci.yml` for the pipeline config.
 
 ---
 
+## Assumuptions
+
+- **Consistent API Response:**
+  - It is assumed that the Just Eat API consistently returns complete and valid data for each request. This includes essential fields such as restaurant name, rating, cuisines, and address.
+- **Abstracted Data Source:**
+  - Since the data source may evolve over time (e.g., switching from Just Eat to a different provider), the system is designed with Dependency Injection to ensure flexibility and ease of integration with new data providers.
+- **Backend-Centric Architecture:**
+  - The responsibility of processing, validating, and preparing data for display lies with the backend. This assumption enables a clean separation of concerns and ensures that the frontend remains lightweight, relying on the backend to provide robust and reliable data structures for frontend.
+
+
+---
+
 ## Possible Improvements
 
+- Add exception handling
 - Add client-side interactivity (Vue)
 - Add caching layer (e.g., Redis)
 - Add Database Support
