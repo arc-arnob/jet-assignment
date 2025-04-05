@@ -19,8 +19,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: 🛠️ Build with Gradle
-        run: ./gradlew clean build --no-daemon
+      - name: 🛠️ Build Spring Boot JAR
+        run: ./gradlew clean bootJar --no-daemon
 
       - name: 🐳 Build Docker image
         run: docker build -t arc007arnob/restaurant-finder .
