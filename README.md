@@ -11,7 +11,7 @@ Built with **Clean Architecture**, **SOLID principles**, **Thymeleaf UI**, and f
 
 ## Features
 
-- Search top 10 restaurants by postcode
+- Search first 10 restaurants by postcode
 - Beautiful UI with TailwindCSS + Thymeleaf
 - Clickable embedded Google Maps
 - REST API + optional Swagger docs
