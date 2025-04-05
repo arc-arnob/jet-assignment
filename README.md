@@ -1,5 +1,10 @@
 # 🍽️ Restaurant Finder
+---
+[![Build](https://github.com/arc-arnob/jet-assignment/actions/workflows/ci.yml/badge.svg)](https://github.com/arc-arnob/jet-assignment/actions)
+![Docker Pulls](https://img.shields.io/docker/pulls/arc007arnob/restaurant-finder?label=Docker%20Pulls&style=flat-square)
+[![CodeQL](https://github.com/arc-arnob/jet-assignment/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/arc-arnob/jet-assignment/security/code-scanning)
 
+---
 A clean, modern Spring Boot web app that allows users to find the top 10 restaurants by UK postcode.  
 Built with **Clean Architecture**, **SOLID principles**, **Thymeleaf UI**, and fully Dockerized for production-readiness.
 ---
