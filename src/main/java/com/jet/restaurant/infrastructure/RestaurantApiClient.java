@@ -41,7 +41,10 @@ public class RestaurantApiClient implements RestaurantDataProvider {
                         raw.getName(),
                         raw.getCuisines().stream().map(RawRestaurant.Cuisine::getName).toList(),
                         raw.getRating().getStarRating(),
-                        raw.getAddress()))
+                        raw.getAddress().getFirstLine() + ", " +
+                                raw.getAddress().getCity() + ", " +
+                                raw.getAddress().getPostalCode()
+                ))
                 .collect(Collectors.toList());
     }
 }
