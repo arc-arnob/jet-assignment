@@ -11,9 +11,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 @Component
 public class RestaurantApiClient implements RestaurantDataProvider {
 
