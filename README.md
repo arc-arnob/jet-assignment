@@ -1,1 +1,108 @@
-Runner
+# 🍽️ Restaurant Finder
+
+A clean, modern Spring Boot web app that allows users to find the top 10 restaurants by UK postcode.  
+Built with **Clean Architecture**, **SOLID principles**, **Thymeleaf UI**, and fully Dockerized for production-readiness.
+---
+
+## Features
+
+- Search top 10 restaurants by postcode
+- Beautiful UI with TailwindCSS + Thymeleaf
+- Clickable embedded Google Maps
+- REST API + optional Swagger docs
+- Docker-ready 
+---
+
+## Software Principles Applied
+
+### [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- **Domain Layer**: Pure business logic & model (`Restaurant`)
+- **Use Case Layer**: Application logic (`RestaurantService`)
+- **Infrastructure Layer**: API client for Just Eat API (`RestaurantApiClient`)
+- **Presentation Layer**: REST + Thymeleaf controllers
+
+### [SOLID Principles](https://www.baeldung.com/solid-principles)
+- **S**ingle Responsibility: Layers and classes have clear roles
+- **O**pen/Closed: Easy to add new data sources without modifying existing logic
+- **L**iskov Substitution: Swap/mock `RestaurantDataProvider` in tests
+- **I**nterface Segregation: Small, focused domain interfaces
+- **D**ependency Inversion: Use case depends on abstraction, not API client
+
+---
+## Project Structure
+
+```
+restaurant-finder/
+├── controller/            # REST + Thymeleaf controllers
+├── usecase/               # Business logic layer
+├── domain/                # Core domain model & interfaces
+├── infrastructure/        # API call logic (Just Eat)
+├── config/                # WebClient config
+├── templates/             # Thymeleaf views (HTML)
+├── Dockerfile             # For containerization
+├── build.gradle           # Gradle config
+└── README.md              # This file
+```
+
+## How to Run
+
+### Option 1: Run with Spring Boot
+
+```bash
+./gradlew bootRun
+```
+
+Then open: [http://localhost:8080](http://localhost:8080)
+
+---
+
+### Option 2: Run with Docker (recommended)
+
+```bash
+docker run -p 8080:8080 arc007arnob/restaurant-finder
+```
+
+> No need for Java or setup — just pull and run.
+
+---
+
+
+## How to Test
+
+```bash
+./gradlew test
+```
+
+Includes:
+- Unit tests for business logic
+- Mockito usage for data provider mocking
+
+---
+
+## API Endpoint (Optional)
+
+| Method | Endpoint             | Description            |
+|--------|----------------------|------------------------|
+| GET    | `/restaurants`       | Get top 10 restaurants |
+| GET    | `/view?postcode=...` | Web UI for postcode search |
+
+Swagger UI (if enabled): [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+
+---
+
+## Possible Improvements
+
+- Add client-side interactivity (Vue)
+- Pagination or sort by rating/distance
+- Add caching layer (e.g., Redis)
+- Add Database Support
+
+---
+## Author
+
+Made by  [Arnob Chowdhury](https://github.com/arc-arnob)
+
+## AI Tools Used
+
+- [GitHub Copilot](https://github.com/features/copilot) for autocompletion and boilerplate generation
+- [ChatGPT](https://chat.openai.com/) for debugging and UI suggestions
