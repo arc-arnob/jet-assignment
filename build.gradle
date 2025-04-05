@@ -42,4 +42,5 @@ tasks.named('test') {
 }
 bootJar {
     mainClass = 'com.jet.restaurant.RestaurantApplication'
+    archiveFileName = 'app.jar'
 }
